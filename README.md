@@ -188,14 +188,47 @@ def crear_incidencia():
     Usuario = request.form["usuario"]
     Descripcion = request.form["dsecripcion"]
 
-    return "Incidencias recibida"
+    return "Incidencia recibida"
 ```
 
 ## Introducir datos en la BD
+```python
+import mysql.connector
 
+def crear_incidencia():
+    conexion = mysql.connector.connect(
+        host="localhost".
+        user="incidencias".
+        password="incidencias".
+        database="incidencias".
+    )
 
+    cursor = conexion.cursor()
 
+    sql = """
+        INSERT INTO registro
+        (aula, usuario, descripcion, estado)
+        VALUES(%5, %5, %5, %5)
+    """
 
+    valores = (
+        aula,
+        usuario,
+        descripcion,
+        "Abierta"
+    )
+
+    cursor.execute(sql, valores)
+
+    conexion.execute(sql, valores)
+
+    cursor.commit()
+
+    cursor.close()
+    conexion.close()
+
+    return "incidencia recibida"
+```
 
 
 show databases;

@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+import mysql.connector
 
 app = Flask(__name__)
 
@@ -9,15 +10,44 @@ def inicio():
 @app.route("/incidencia", methods=["POST"])
 def crear_incidencia():
 
-    Aula = request.form["aula"]
-    Usuario = request.form["usuario"]
-    Descripcion = request.form["descripcion"]
+    aula = request.form["aula"]
+    usuario = request.form["usuario"]
+    descripcion = request.form["descripcion"]
 
-    print("Aula:" + Aula)
-    print("Usuario:" + Usuario)
-    print("Descripcion:" + Descripcion)
+    print("Aula:" + aula)
+    print("Usuario:" + usuario)
+    print("Descripcion:" + descripcion)
 
-    return "Incidencia recibida"
+    conexion = mysql.connector.connect(
+        host="localhost",
+        user="incidencias",
+        password="incidencias",
+        database="incidencias"
+    )
+
+    cursor = conexion.cursor()
+
+    sql = """
+        INSERT INTO registro
+        (aula, usuario, descripcion, estado)
+        VALUES(%s, %s, %s, %s)
+    """
+
+    valores = (
+        aula,
+        usuario,
+        descripcion,
+        "ABIERTA"
+    )
+
+    cursor.execute(sql, valores)
+
+    conexion.commit()
+
+    cursor.close()
+    conexion.close()
+
+    return "incidencia recibida"
 
 if __name__ == "__main__":
     app.run(debug=True)
