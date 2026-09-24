@@ -19,7 +19,7 @@
 `sudo apt update`
 `sudo apt upgrade`
 2. Instalar y configurar Git
-`sudo apt git`
+`sudo apt install git`
 `git init`
 `git add .`
 `git commit -m "Commit incial con readme y pagina principa formulario web"`
@@ -30,7 +30,7 @@
 5. Cambio de propietario y permisos de carpeta
 `sudo chown -R $USER:$USER /var/www/html`
 `sudo chmod -R u=rwX,go=rX /var/www/html`
-6. Creacion de nueva carpeta de "Incodencias", y cambio de propietario de carpeta
+6. Creacion de nueva carpeta de "Incidencias", y cambio de propietario de carpeta
 `sudo mkdir -p /var/www/incidencias.ies.teis`
 `sudo chown -R $USER:$USER /var/www/incidencias.ies.teis`
 7. Creacion de Documento "incidencias.ies.teis.conf"
@@ -80,12 +80,12 @@ insert into registro (aula, descripcion, usuario, estado) values ('Taller1', 'PC
 1. Crear repositorio local, añadir archivos y commit
 ```bash
 git init
-git add.
+git add .
 git commit -m "comentario"
 ```
 2. Crear cuenta github, crear repositorio en github
 
-3. Sincronizacion entre github y equipo local
+3. Sincronizacion entre github y equipo local (solo primera vez)
 ```bash
 git remote add origin https://github.com/CLOUD-29/incidencias.ies.teis.git
 git branch -M main
@@ -118,15 +118,15 @@ pip freeze > requirements.txt
 
 Al empezar:
 ```bash
-cd /var/www/incindencias.ies.teis
-source venv/bin/activate
+# cd /var/www/incindencias.ies.teis
+source venv/bin/activate # Activar entorno virtual
 python app.py # Lanzar app
 ```
 
 Al terminar:
 ```bash
-    Ctrl+C para salir del entorno
-    deactivate
+    Ctrl+C Para detener aplicacion
+    deactivate Salir del entorno virtual
 ```
 
 
@@ -238,6 +238,8 @@ select user from mysql.user;
 `git init`
 `git add .`
 `git commit -m "Commit incial con readme y pagina principa formulario web"`
+`git push -u origin main`
+
 
 - Primera vez que descargamos datos de GitHub
 ``` bash
