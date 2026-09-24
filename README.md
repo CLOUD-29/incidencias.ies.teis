@@ -150,7 +150,7 @@ if __name__ == "__main__":
   
 Ir a navegador y introducir la direccion asignada a la pagina:
 ```bash
-http://localhost:5000 / http://127.0.0.1:5000
+http://localhost:5000 / http://127.0.0.1:5000 / ...
 ```
 
 ## Migracion del formulario a Python/Flask
