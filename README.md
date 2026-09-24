@@ -245,7 +245,7 @@ select user from mysql.user;
 git clone https://github.com/CLOUD-29/incidencias.ies.teis.git
 ```
 
-- Actualizar documentos tras haber hecho instalacion para actualizar cambios de GitHub
+- Actualizar documentos tras haber hecho instalacion para actualizar cambios de GitHub en equipo local
 ```bash
 git pull
 ```
