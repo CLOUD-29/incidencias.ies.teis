@@ -155,7 +155,7 @@ http://localhost:5000 / http://127.0.0.1:5000
 
 ## Migracion del formulario a Python/Flask
 
-1. Creamos una carpeta tempaltes y movmos ahí nuestro index.html
+1. Creamos una carpeta templates y movmos ahí nuestro index.html
 2. Modificaos app.py:
 ```python
 from flask import Flask, render_template
