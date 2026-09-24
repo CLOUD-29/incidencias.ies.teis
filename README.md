@@ -155,8 +155,8 @@ http://localhost:5000 / http://127.0.0.1:5000
 
 ## Migracion del formulario a Python/Flask
 
-1. Creamos una carpeta templates y movmos ahí nuestro index.html
-2. Modificaos app.py:
+1. Creamos una carpeta templates y movemos ahí nuestro index.html
+2. Modificamos app.py:
 ```python
 from flask import Flask, render_template
 
@@ -169,7 +169,7 @@ def inicio():
 if __name__ == "__main__":
     app.run(debug=True)
 ```
-3. Comprobamos accediendo a http://localhost:5000 (ó la direccion añadida en /etc/hosts).Hemos conseguido que ahora el formulario lo devuelva Flask
+3. Comprobamos accediendo a http://localhost:5000 (ó la direccion añadida en /etc/hosts). Hemos conseguido que ahora el formulario lo devuelva Flask.
 
 
 ## Recibir los datos del formulario
@@ -234,8 +234,7 @@ def crear_incidencia():
 show databases;
 select user from mysql.user;
 
-- Despues de meter README en incidencias.ies.teis
-`git init`
+- Actualizar/Sincronizar archivos nuevos en github.
 `git add .`
 `git commit -m "Commit incial con readme y pagina principa formulario web"`
 `git push -u origin main`
