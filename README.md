@@ -208,7 +208,7 @@ def crear_incidencia():
     sql = """
         INSERT INTO registro
         (aula, usuario, descripcion, estado)
-        VALUES(%5, %5, %5, %5)
+        VALUES(%s, %s, %s, %s)
     """
 
     valores = (
@@ -219,9 +219,7 @@ def crear_incidencia():
     )
 
     cursor.execute(sql, valores)
-
-    conexion.execute(sql, valores)
-
+    
     cursor.commit()
 
     cursor.close()
